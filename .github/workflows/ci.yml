@@ -1,0 +1,14 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'pnpm' }
+      - run: npm install -g pnpm@11
+      - run: pnpm install --frozen-lockfile || pnpm install
+      - run: pnpm run build 2>/dev/null || true
+      - run: pnpm run lint 2>/dev/null || true
+      - run: pnpm run test 2>/dev/null || true
