@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+Pods/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+__pycache__/
+*.py[cod]
+
+# Builds / generated output
+dist/
+build/
+out/
+target/
+release/
+.next/
+.turbo/
+coverage/
+*.egg-info/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.log
